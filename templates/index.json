@@ -223,7 +223,15 @@
         "feature_NnWf6B": {
           "type": "feature",
           "settings": {
-            "title": "Painless",
+            "title": "Example",
+            "this_store": "yes",
+            "other_store": "no"
+          }
+        },
+        "feature_4dmCaN": {
+          "type": "feature",
+          "settings": {
+            "title": "Example",
             "this_store": "yes",
             "other_store": "no"
           }
@@ -231,7 +239,7 @@
         "feature_i8eDLi": {
           "type": "feature",
           "settings": {
-            "title": "Painless",
+            "title": "Example",
             "this_store": "yes",
             "other_store": "no"
           }
@@ -239,7 +247,7 @@
         "feature_8hxMgk": {
           "type": "feature",
           "settings": {
-            "title": "Painless",
+            "title": "Example",
             "this_store": "yes",
             "other_store": "no"
           }
@@ -247,7 +255,7 @@
         "feature_eBBnxL": {
           "type": "feature",
           "settings": {
-            "title": "Painless",
+            "title": "Example",
             "this_store": "yes",
             "other_store": "no"
           }
@@ -255,6 +263,7 @@
       },
       "block_order": [
         "feature_NnWf6B",
+        "feature_4dmCaN",
         "feature_i8eDLi",
         "feature_8hxMgk",
         "feature_eBBnxL"
