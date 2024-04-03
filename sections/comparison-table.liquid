@@ -1,23 +1,23 @@
-```liquid
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  .com_left-side_box {
-    text-align: center;
-  }
-
-  @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
+  .com_left-side_box {
+  	text-align: center;
   }
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
 {%- endstyle -%}
 
-<div style="background-color: {{ section.settings.bg_color }};" class="comparison-section pro_compare sale_compare_section">
+<div
+  style="background-color: {{ section.settings.bg_color }};"
+  class="comparison-section pro_compare sale_compare_section"
+>
   <div class="page-width section-{{ section.id }}-padding isolate">
     <div class="compare-box">
       <div class="com_left-side">
@@ -31,12 +31,16 @@
       <div class="table_content">
         <div class="top_table_content">
           <table>
-            <tbody> 
+            <tbody>
               <tr>
                 <th class="left_top_content">&nbsp;</th>
                 <th class="forchics tabletile border-leftradius border-rightradius right_content">
                   <div class="forchicsimage table_right_content">
-                    <img loading="lazy" src="{{ section.settings.logo | img_url: '200x' }}" alt="{{ section.settings.logo.alt }}">
+                    <img
+                      loading="lazy"
+                      src="{{ section.settings.logo | img_url: '200x' }}"
+                      alt="{{ section.settings.logo.alt }}"
+                    >
                   </div>
                 </th>
                 <th class="text-center">
@@ -50,19 +54,29 @@
           <table>
             <tbody>
               {% for block in section.blocks %}
-              <tr class="tablelooprow">
-                <td style="color: {{ section.settings.table_text }};" class="tabletile">{{ block.settings.title }}</td>
-                {% if block.settings.this_store == 'yes' %}
-                   <td class="forchics"><img src="https://cdn.accentuate.io/7105770193071/21145836322991/check_1check-v1642658295149.png?33x27"></td>
-                {% else %}
-                   <td class="tabletile other_content"><img src="https://cdn.accentuate.io/7105770193071/21145836388527/cross-v1642658299531.svg?30x30"></td>
-                {% endif %}
-                {% if block.settings.other_store == 'no' %}
-                    <td class="tabletile other_content"><img src="https://cdn.accentuate.io/7105770193071/21145836388527/cross-v1642658299531.svg?30x30"></td>
-                {% else %}
-                   <td class="forchics"><img src="https://cdn.accentuate.io/7105770193071/21145836322991/check_1check-v1642658295149.png?33x27"></td>
-                {% endif %}
-              </tr>
+                <tr class="tablelooprow">
+                  <td style="color: {{ section.settings.table_text }};" class="tabletile">
+                    {{ block.settings.title }}
+                  </td>
+                  {% if block.settings.this_store == 'yes' %}
+                    <td class="forchics">
+                      <img src="https://cdn.accentuate.io/7105770193071/21145836322991/check_1check-v1642658295149.png?33x27">
+                    </td>
+                  {% else %}
+                    <td class="tabletile other_content">
+                      <img src="https://cdn.accentuate.io/7105770193071/21145836388527/cross-v1642658299531.svg?30x30">
+                    </td>
+                  {% endif %}
+                  {% if block.settings.other_store == 'no' %}
+                    <td class="tabletile other_content">
+                      <img src="https://cdn.accentuate.io/7105770193071/21145836388527/cross-v1642658299531.svg?30x30">
+                    </td>
+                  {% else %}
+                    <td class="forchics">
+                      <img src="https://cdn.accentuate.io/7105770193071/21145836322991/check_1check-v1642658295149.png?33x27">
+                    </td>
+                  {% endif %}
+                </tr>
               {% endfor %}
             </tbody>
           </table>
@@ -71,240 +85,327 @@
     </div>
   </div>
 </div>
-
 <style>
-  .sale_compare_section {
-    background-color: #fff;
-    position: relative;
-    width: 100%;
-    z-index: 1;
-    overflow: hidden;
-  }                                                                                             
-  .sale_compare_section:before {
-    content: "";
-    position: absolute!important;
-    left: 0;
-    right: 0;
-    min-height: 200px;
-    overflow: hidden;
-    z-index: -1;
-    bottom: 0;
-  } 
-  .compare-box {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 20px 0 40px;
-  } 
+      .sale_compare_section {
+      background-color: #fff;
+      position: relative;
+      width: 100%;
+      z-index: 1;
+      overflow: hidden;
+  }
+      .sale_compare_section:before {
+      content: "";
+      position: absolute!important;
+      left: 0;
+      right: 0;
+      min-height: 200px;
+      overflow: hidden;
+      z-index: -1;
+      bottom: 0;
+  }
+      .compare-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 20px 0 40px;
+  }
 
   .com_left-side h2.com_heading {
-    font-size: 45px;
-    line-height: 50px;
-    text-transform: initial;
-    letter-spacing: 0;
-    max-width: 90%;
-    width: 100%;
-    margin: auto auto 15px;
-    text-align: center;
-    color: #2e2a39;
-    font-weight: 700;
-  }
-  
-  .top_table_content {
-    width: 100%;
-  }  
-
-  .compare-box .com_right-side {
-    width: 100%;
-    padding-left: 20px;
-  }  
-
-  .com_right-side table {
-    margin-bottom: 0; 
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 19px 18px 11px #e3e8ec73;
-    overflow: hidden;
-  }  
-
-  .pro_compare .compare-box tr.tablelooprow {
-    background-color: #000;
-    color: #fff;
-    border: 1px solid rgba(246,246,244,.44);
-    border-radius: 3px 0 0;
-  }  
-
-  .pro_compare td.tabletile {
-    background-color: {{ section.settings.table_bg }};
-  }  
-
-  .sale_compare_section .tablelooprow td.forchics {
-    background: #fff; 
-    color: #000;
-    text-align: center;
-  } 
-
-  .pro_compare td.forchics {
-    width: 25%;
-  } 
-
-  .sale_compare_section .compare-box td.forchics img {
-    width: 20px;
-    height: 20px;
-    object-fit: cover; 
-    margin: 0 auto; 
-  }                                                                                      
-
-  .compare-box .tablelooprow td {
-    border: none;
-  }  
-
-  .sale_compare_section td.tabletile.other_content {
-    background-color: #fff;
-    width: 25%;
-  } 
-
-  .pro_compare td.tabletile {
-    text-align: center;
-    font-size: 18px;
-    line-height: 28px;
-    padding: 15px 10px;
+  	font-size: 45px;
+  	line-height: 50px;
+  	text-transform: initial;
+  	letter-spacing: 0;
+  	max-width: 90%;
+  	width: 100%;
+  	margin: auto auto 15px;
+  	text-align: center;
+  	color: #2e2a39;
+  	font-weight: 700;
   }
 
-  {% schema %}
-{
-  "name": "Comparison Section",
-  "settings": [
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "Section Background Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "table_bg",
-      "label": "Table Background Color",
-      "default": "#a891f6"
-    },
-    {
-      "type": "color",
-      "id": "table_text",
-      "label": "Table Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "text",
-      "id": "title",
-      "label": "Heading",
-      "default": "What Makes Bleame Special"
-    },
-    {
-      "type": "richtext",
-      "id": "des",
-      "label": "Description",
-      "default": "<p>Find out why you should choose Bleame instead of other hair removal tools.</p>"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo"
-    },
-    {
-      "type": "text",
-      "id": "other",
-      "label": "Others",
-      "default": "Others"
-    },
-    {
-      "type": "header",
-      "content": "Padding Settings"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding Top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding Bottom",
-      "default": 36
+  /*     .table_content {
+      width: 50%;
+  }   */
+  /* .pro_compare .com_left-side_box {
+      max-width: 750px;
+      width: 100%;
+      margin: 0 auto;
+  }
+  .pro_compare .com_left-side{
+    width:100%;
+  } */
+  .forchicsimage.table_right_content img{
+   margin: 0 auto;
+  }
+      .top_table_content {
+      width: 100%;
+  }
+      .compare-box .com_right-side {
+      width: 100%;
+      padding-left: 20px;
+  }
+      .com_right-side table {
+      margin-bottom: 0;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0 19px 18px 11px #e3e8ec73;
+      overflow: hidden;
+  }
+      .pro_compare .compare-box tr.tablelooprow {
+      background-color: #000;
+      color: #fff;
+      border: 1px solid rgba(246,246,244,.44);
+      border-radius: 3px 0 0;
+  }
+      .pro_compare td.tabletile {
+      background-color: {{ section.settings.table_bg }};
+  }
+      .sale_compare_section .tablelooprow td.forchics {
+      background: #fff;
+        color: #000;
+      text-align: center;
+  }
+      .pro_compare td.forchics {
+      width: 25%;
+  }
+      .sale_compare_section .compare-box td.forchics img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+      margin: 0 auto;
+  }
+      .compare-box .tablelooprow td {
+      border: none;
+  }
+      .sale_compare_section td.tabletile.other_content {
+      background-color: #fff;
+      width: 25%;
+  }
+      .pro_compare td.tabletile {
+      text-align: center;
+      font-size: 18px;
+      line-height: 28px;
+      padding: 15px 10px;
+      color: #fff;
+      font-weight: 600;
+  }
+      .compare-box .tablelooprow td {
+      border: none;
+  }
+      .sale_compare_section td.tabletile.other_content img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+      margin: 0 auto;
+  }
+    .pro_compare .compare-box tr.tablelooprow {
+      background-color: #000;
+      color: #fff;
+      border: 1px solid rgba(246,246,244,.44);
+      border-radius: 3px 0 0;
+  }
+      .top_table_content th.left_top_content {
+      width: 50%;
+  }
+      .top_table_content th.forchics.tabletile.border-leftradius.border-rightradius.right_content {
+      width: 25%!important;
+  }
+      .pro_compare .forchicsimage {
+      margin-top: 0;
+  }
+
+      .pro_compare .forchicsimage {
+      margin-top: 0;
+  }
+      .sale_compare_section .compare-box th p {
+      color: #000;
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 21px;
+      font-weight: 600;
+  }
+      .sale_compare_section table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin-bottom: 0;
+  }
+      .top_table_content {
+      width: 100%;
+  }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+     }
+      .compare_section td, th {
+      border: none !important;
+  }
+      .questions {
+      background-color: #fafafa;
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+
+  .com_left-side {
+    width: 50%;
+  }
+  .table_content {
+    width: 50%;
+  }
+  .top_table_content .bigtext {
+  	margin-top: 0;
+  }
+  .forchicsimage img {
+  	max-width: 93px;
+  }
+    .top_table_content > table {
+  	box-shadow: none !important;
+  }
+    @media only screen and (max-width:925px) {
+  .com_left-side {
+    width: 100%;
+  }
+  .table_content {
+    width: 100%;
+  }
+
     }
-  ],
-  "presets": [
+</style>
+{% schema %}
+ {
+   "name": "Comparison ",
+   "settings": [
+      {
+         "type": "color",
+         "id": "bg_color",
+         "label": "Section Background Color",
+          "default": "#fff"
+     },
+      {
+         "type": "color",
+         "id": "table_bg",
+         "label": "Table BG",
+          "default": "#a891f6"
+     },
+            {
+         "type": "color",
+         "id": "table_text",
+         "label": "Table Text Color",
+          "default": "#fff"
+     },
+     {
+       "type": "text",
+       "id": "title",
+       "label": "Heading",
+       "default": "What Makes Bleame Special"
+     },
+      {
+       "type": "richtext",
+       "id": "des",
+       "label": "Description",
+       "default": "<p> Find out why you should choose Bleame instead of other hair removal tools. Find out why you should choose Bleame instead of other hair removal tools.</p>"
+     },
+     {
+       "type": "image_picker",
+       "id": "logo",
+       "label": "Logo"
+     },
+       {
+       "type": "text",
+       "id": "other",
+       "label": "Others",
+       "default": "Others"
+     },
+     {
+     "type": "header",
+     "content": "t:sections.all.padding.section_padding_heading"
+   },
+   {
+     "type": "range",
+     "id": "padding_top",
+     "min": 0,
+     "max": 100,
+     "step": 4,
+     "unit": "px",
+     "label": "t:sections.all.padding.padding_top",
+     "default": 36
+   },
+   {
+     "type": "range",
+     "id": "padding_bottom",
+     "min": 0,
+     "max": 100,
+     "step": 4,
+     "unit": "px",
+     "label": "t:sections.all.padding.padding_bottom",
+     "default": 36
+   }
+   ],
+"presets": [
+   {
+     "name": "Comparison ",
+     "blocks": [
+       {
+         "type": "feature"
+       },
+        {
+         "type": "feature"
+       }
+       ,
+        {
+         "type": "feature"
+       }
+       ,
+        {
+         "type": "feature"
+       }
+     ]
+   }
+ ],
+ "blocks": [
+   {
+     "type": "feature",
+     "name": "Feature",
+     "settings": [
+       {
+        "type": "text",
+         "id": "title",
+         "label": "Feature Tilte",
+         "default": "Painless"
+       },
     {
-      "name": "Comparison Section",
-      "blocks": [
-        {
-          "type": "feature"
-        },
-        {
-          "type": "feature"
-        },
-        {
-          "type": "feature"
-        },
-        {
-          "type": "feature"
-        }
-      ]
-    }
-  ],
-  "blocks": [
-    {
-      "type": "feature",
-      "name": "Feature",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Feature Title",
-          "default": "Painless"
-        },
-        {
-          "type": "select",
-          "id": "this_store",
-          "label": "This Store",
-          "options": [
-            {
-              "value": "yes",
-              "label": "Yes"
-            },
-            {
-              "value": "no",
-              "label": "No"
-            }
-          ],
-          "default": "yes"
-        },
-        {
-          "type": "select",
-          "id": "other_store",
-          "label": "Other Store",
-          "options": [
-            {
-              "value": "yes",
-              "label": "Yes"
-            },
-            {
-              "value": "no",
-              "label": "No"
-            }
-          ],
-          "default": "no"
-        }
-      ]
-    }
-  ]
-}
+     "type": "select",
+     "id": "this_store",
+     "options": [
+       {
+         "value": "yes",
+         "label": "Yes"
+       },
+       {
+         "value": "no",
+         "label": "No"
+       }
+     ],
+     "default": "yes",
+     "label": "This Store"
+   },
+           {
+     "type": "select",
+     "id": "other_store",
+     "options": [
+       {
+         "value": "yes",
+         "label": "Yes"
+       },
+       {
+         "value": "no",
+         "label": "No"
+       }
+     ],
+     "default": "no",
+     "label": "Other Store"
+   }
+     ]
+   }
+ ]
+ }
 {% endschema %}
