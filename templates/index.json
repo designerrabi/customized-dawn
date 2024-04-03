@@ -217,63 +217,54 @@
         "padding_bottom": 36
       }
     },
-    "comparison_table_jPM66R": {
+    "comparison_table_7wqe9R": {
       "type": "comparison-table",
       "blocks": {
-        "feature_NnWf6B": {
+        "feature_ygFU8t": {
           "type": "feature",
           "settings": {
-            "title": "Example",
+            "title": "Title",
             "this_store": "yes",
             "other_store": "no"
           }
         },
-        "feature_4dmCaN": {
+        "feature_3bcHR3": {
           "type": "feature",
           "settings": {
-            "title": "Example",
+            "title": "Title",
             "this_store": "yes",
             "other_store": "no"
           }
         },
-        "feature_i8eDLi": {
+        "feature_NqbwMb": {
           "type": "feature",
           "settings": {
-            "title": "Example",
+            "title": "Title",
             "this_store": "yes",
             "other_store": "no"
           }
         },
-        "feature_8hxMgk": {
+        "feature_CrULYW": {
           "type": "feature",
           "settings": {
-            "title": "Example",
-            "this_store": "yes",
-            "other_store": "no"
-          }
-        },
-        "feature_eBBnxL": {
-          "type": "feature",
-          "settings": {
-            "title": "Example",
+            "title": "Title",
             "this_store": "yes",
             "other_store": "no"
           }
         }
       },
       "block_order": [
-        "feature_NnWf6B",
-        "feature_4dmCaN",
-        "feature_i8eDLi",
-        "feature_8hxMgk",
-        "feature_eBBnxL"
+        "feature_ygFU8t",
+        "feature_3bcHR3",
+        "feature_NqbwMb",
+        "feature_CrULYW"
       ],
       "settings": {
         "bg_color": "#fff",
-        "table_bg": "#170f31",
+        "table_bg": "#000000",
         "table_text": "#fff",
-        "title": "What Makes Bleame Special",
-        "des": "<p> Find out why you should choose Bleame instead of other hair removal tools. Find out why you should choose Bleame instead of other hair removal tools.<\/p>",
+        "title": "Why Choose Our Product",
+        "des": "<p> Discover the reasons behind choosing our product over others.<\/p>",
         "other": "Others",
         "padding_top": 36,
         "padding_bottom": 36
@@ -287,6 +278,6 @@
     "collage",
     "video",
     "multicolumn",
-    "comparison_table_jPM66R"
+    "comparison_table_7wqe9R"
   ]
 }
