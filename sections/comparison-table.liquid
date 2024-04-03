@@ -1,11 +1,14 @@
+```liquid
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
-.com_left-side_box {
-	text-align: center;
-}
+
+  .com_left-side_box {
+    text-align: center;
+  }
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -63,21 +66,21 @@
               {% endfor %}
             </tbody>
           </table>
-  
         </div>
       </div>
     </div>
   </div>
 </div>
+
 <style>
-    .sale_compare_section {
+  .sale_compare_section {
     background-color: #fff;
     position: relative;
     width: 100%;
     z-index: 1;
     overflow: hidden;
-}                                                                                             
-    .sale_compare_section:before {
+  }                                                                                             
+  .sale_compare_section:before {
     content: "";
     position: absolute!important;
     left: 0;
@@ -86,106 +89,84 @@
     overflow: hidden;
     z-index: -1;
     bottom: 0;
-} 
-    .compare-box {
+  } 
+  .compare-box {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 20px 0 40px;
-} 
+  } 
 
-.com_left-side h2.com_heading {
-	font-size: 45px;
-	line-height: 50px;
-	text-transform: initial;
-	letter-spacing: 0;
-	max-width: 90%;
-	width: 100%;
-	margin: auto auto 15px;
-	text-align: center;
-	color: #2e2a39;
-	font-weight: 700;
-}
-  
-    .top_table_content {
+  .com_left-side h2.com_heading {
+    font-size: 45px;
+    line-height: 50px;
+    text-transform: initial;
+    letter-spacing: 0;
+    max-width: 90%;
     width: 100%;
-}  
-    .compare-box .com_right-side {
+    margin: auto auto 15px;
+    text-align: center;
+    color: #2e2a39;
+    font-weight: 700;
+  }
+  
+  .top_table_content {
+    width: 100%;
+  }  
+
+  .compare-box .com_right-side {
     width: 100%;
     padding-left: 20px;
-}  
-    .com_right-side table {
+  }  
+
+  .com_right-side table {
     margin-bottom: 0; 
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 19px 18px 11px #e3e8ec73;
     overflow: hidden;
-}  
-    .pro_compare .compare-box tr.tablelooprow {
-    background-color: #000;
-    color: #fff;
-    border: 1px solid rgba(246,246,244,.44);
-    border-radius: 3px 0 0;
-}  
-    .pro_compare td.tabletile {
-    background-color: {{ section.settings.table_bg }};
-}  
-    .sale_compare_section .tablelooprow td.forchics {
-    background: #fff; 
-      color: #000;
-    text-align: center;
-} 
-    .pro_compare td.forchics {
-    width: 25%;
-} 
-    .sale_compare_section .compare-box td.forchics img {
-    width: 20px;
-    height: 20px;
-    object-fit: cover; 
-    margin: 0 auto; 
-}                                                                                      
-    .compare-box .tablelooprow td {
-    border: none;
-}  
-    .sale_compare_section td.tabletile.other_content {
-    background-color: #fff;
-    width: 25%;
-} 
-    .pro_compare td.tabletile {
-    text-align: center;
-    font-size: 18px;
-    line-height: 28px;
-    padding: 15px 10px;
-    color: #fff;
-    font-weight: 600;
-}  
-    .compare-box .tablelooprow td {
-    border: none;
-}  
-    .sale_compare_section td.tabletile.other_content img {
-    width: 20px;
-    height: 20px;
-    object-fit: cover; 
-    margin: 0 auto;
-}  
+  }  
+
   .pro_compare .compare-box tr.tablelooprow {
     background-color: #000;
     color: #fff;
     border: 1px solid rgba(246,246,244,.44);
     border-radius: 3px 0 0;
-}  
-    .top_table_content th.left_top_content {
-    width: 50%;
-} 
-    .top_table_content th.forchics.tabletile.border-leftradius.border-rightradius.right_content {
-    width: 25%!important;
-}  
-    .pro_compare .forchicsimage {
-    margin-top: 0;
-} 
+  }  
 
-    .pro_compare .forchicsimage {
-    margin-top: 0;
-}  
-    .sale_compare_section .compare-box th p {
-    color
+  .pro_compare td.tabletile {
+    background-color: {{ section.settings.table_bg }};
+  }  
+
+  .sale_compare_section .tablelooprow td.forchics {
+    background: #fff; 
+    color: #000;
+    text-align: center;
+  } 
+
+  .pro_compare td.forchics {
+    width: 25%;
+  } 
+
+  .sale_compare_section .compare-box td.forchics img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover; 
+    margin: 0 auto; 
+  }                                                                                      
+
+  .compare-box .tablelooprow td {
+    border: none;
+  }  
+
+  .sale_compare_section td.tabletile.other_content {
+    background-color: #fff;
+    width: 25%;
+  } 
+
+  .pro_compare td.tabletile {
+    text-align: center;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 15px 10px;
+  }
