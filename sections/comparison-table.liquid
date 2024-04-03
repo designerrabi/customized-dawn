@@ -170,3 +170,141 @@
     line-height: 28px;
     padding: 15px 10px;
   }
+
+  {% schema %}
+{
+  "name": "Comparison Section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "table_bg",
+      "label": "Table Background Color",
+      "default": "#a891f6"
+    },
+    {
+      "type": "color",
+      "id": "table_text",
+      "label": "Table Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "What Makes Bleame Special"
+    },
+    {
+      "type": "richtext",
+      "id": "des",
+      "label": "Description",
+      "default": "<p>Find out why you should choose Bleame instead of other hair removal tools.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "other",
+      "label": "Others",
+      "default": "Others"
+    },
+    {
+      "type": "header",
+      "content": "Padding Settings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Comparison Section",
+      "blocks": [
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Feature Title",
+          "default": "Painless"
+        },
+        {
+          "type": "select",
+          "id": "this_store",
+          "label": "This Store",
+          "options": [
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            }
+          ],
+          "default": "yes"
+        },
+        {
+          "type": "select",
+          "id": "other_store",
+          "label": "Other Store",
+          "options": [
+            {
+              "value": "yes",
+              "label": "Yes"
+            },
+            {
+              "value": "no",
+              "label": "No"
+            }
+          ],
+          "default": "no"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
